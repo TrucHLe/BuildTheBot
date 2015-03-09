@@ -1,7 +1,8 @@
 package csc232;
+
 /**
- * This class manages the fields of each Item object.
- * This class' methods set and return the fields' values.
+ * The Item class manages the fields of each Item object.
+ * It has methods that can set and return each item's shortname, type, and description.
  * 
  * @author Truc Le
  *
@@ -35,6 +36,18 @@ public class Item
 	public void setDescription( String newDescription )
 	{
 		description = newDescription;
+	}
+	
+	
+	public String getShortname()
+	{
+		return shortname;
+	}
+	
+	
+	public String getDescription()
+	{
+		return description;
 	}
 	
 	

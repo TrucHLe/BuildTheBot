@@ -1,15 +1,18 @@
 package csc232;
+
 /**
- * This class creates two Item objects,
+ * The ItemTest class creates two Item objects,
  * prompts the user to set all the fields of these objects,
  * and prints out the values of these objects' fields.
  * 
  * @author Truc Le
+ * 
  */
+
 import java.util.Scanner;
 
 
-public class ItemTestDriver 
+public class ItemTest 
 {
 	public static void main( String[] args )
 	{
