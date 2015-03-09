@@ -1,3 +1,4 @@
+package csc232;
 /**
  * This class creates two Item objects,
  * prompts the user to set all the fields of these objects,

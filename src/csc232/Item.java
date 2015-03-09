@@ -1,3 +1,4 @@
+package csc232;
 /**
  * This class manages the fields of each Item object.
  * This class' methods set and return the fields' values.
