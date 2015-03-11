@@ -39,23 +39,22 @@ public class Driver
 		location1.addItem( item1 );
 		location1.addItem( item2 );
 
+		Scanner in = new Scanner( System.in );
+		String command;
 		
 		while ( true )
 		{
-			Scanner in = new Scanner( System.in );
-			String command;
 			
 			System.out.print( "Enter Command > ");			
 			command = in.nextLine();
 			command = command.toLowerCase();
 			
 			
-			if ( command.equals( "quit" ) )
+			if ( command.trim().equals( "quit" ) )
 			{
-				in.close();
 				break;
 			}
-			else if ( command.equals( "look" ) )
+			else if ( command.trim().equals( "look" ) )
 			{
 				System.out.println( location1.getDescription() );
 				for (int i = 0; i < location1.numberOfItems(); i ++ )
@@ -74,6 +73,9 @@ public class Driver
 				System.out.println( "I don't know how to do that" );
 			}	
 		}
+
+		in.close();
+
 		
 	}
 }
