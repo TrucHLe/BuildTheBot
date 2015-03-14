@@ -5,12 +5,12 @@ package csc232;
  * 
  * It then creates an infinite loop that prompts the user to enter a command,
  * reads a line from the user, and processes the command:
- * - If the command is “quit”, the loop exits and the program ends.
- * - If the command is “look”, print out the description of the location
+ * - If the command is â€œquitâ€�, the loop exits and the program ends.
+ * - If the command is â€œlookâ€�, print out the description of the location
  * and the short names of the items found there.
- * - If the command is “examine name”, get the item with the given name
+ * - If the command is â€œexamine nameâ€�, get the item with the given name
  * from the location and print its description
- * - If the command is something else, print "I don’t know how to do that."
+ * - If the command is something else, print "I donâ€™t know how to do that."
  * 
  * @author Truc Le
  * 
@@ -25,6 +25,10 @@ public class Driver
 		Location location1 = new Location();
 		Item item1 = new Item();
 		Item item2 = new Item();
+		Item item3 = new Item();
+		Item item4 = new Item();
+		Item item5 = new Item();
+		Item item6 = new Item();
 		
 		location1.setDescription( "A room filled with sunlight" );
 		
@@ -36,9 +40,29 @@ public class Driver
 		item2.setType( "Clothing" );
 		item2.setDescription( "A pair of polka dot socks" );
 		
+		item3.setShortname( "Eyes" );
+		item3.setType( "Robot part" );
+		item3.setDescription( "A pair of mechanical eyes" );
+		
+		item4.setShortname( "Arms" );
+		item4.setType( "Robot part" );
+		item4.setDescription( "A pair of mechanical arms" );
+		
+		item5.setShortname( "Box" );
+		item5.setType( "Robot part" );
+		item5.setDescription( "A hollow box that serves as the body" );
+		
+		item6.setShortname( "Wheels" );
+		item6.setType( "Robot part" );
+		item6.setDescription( "Two chained wheels" );
+		
 		location1.addItem( item1 );
 		location1.addItem( item2 );
-
+		location1.addItem( item3 );
+		location1.addItem( item4 );
+		location1.addItem( item5 );
+		location1.addItem( item6 );
+		
 		Scanner in = new Scanner( System.in );
 		String command;
 		
