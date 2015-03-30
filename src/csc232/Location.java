@@ -14,12 +14,11 @@ package csc232;
 
 import java.util.ArrayList;
 
-public class Location 
+public class Location
 {
 	private String name;
 	private String description;
-	private ArrayList<Item> contents = new ArrayList<Item>();
-	
+	private ArrayList<Item> contents;
 	
 	/**
 	 * The default constructor.
@@ -44,7 +43,7 @@ public class Location
 		contents = new ArrayList<Item>();
 	}
 	
-	
+
 	/**
 	 * Constructor with given name and description.
 	 * @param n The name of the location
@@ -67,7 +66,7 @@ public class Location
 	{
 		return name;
 	}
-	
+
 	
 	/**
 	 * Returns the description of the location.
@@ -83,9 +82,9 @@ public class Location
 	 * Adds the given Item to the contents list of the location.
 	 * @param it The item to add to the location.
 	 */
-	public void addItem( Item item )
+	public void addItem( Item it )
 	{
-		contents.add( item );
+		contents.add( it );
 	}
 	
 	
@@ -96,10 +95,10 @@ public class Location
 	 */
 	public Item retrieveItem( String name )
 	{
-		for ( Item item : contents )
+		for ( Item it : contents )
 		{
-			if ( item.getName().toLowerCase().equals( name.toLowerCase() ) )
-				return item;
+			if ( it.getName().equals( name ) )
+				return it;
 		}
 		return null;
 	}
@@ -127,5 +126,4 @@ public class Location
 	{
 		return contents.size();
 	}
-
 }

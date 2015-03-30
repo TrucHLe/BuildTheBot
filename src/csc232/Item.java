@@ -11,9 +11,9 @@ package csc232;
 public class Item
 {
 	private String name;
-	private String type;
 	private String description;
-	
+	private String type;
+
 	/**
 	 * The default constructor, creates a default item.
 	 */

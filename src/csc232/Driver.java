@@ -27,7 +27,6 @@ public class Driver
 	private Item item4;
 	
 	
-	
 	public Driver( ) 
 	{
 		location1 = new Location( "Bedroom", "A room filled with sunlight" );
@@ -51,7 +50,6 @@ public class Driver
 		
 		program.run( );
 	}
-	
 	
 	
 	public void run( ) 
@@ -99,8 +97,6 @@ public class Driver
 			
 		}
 
-		in.close();
-
-		
+		in.close();	
 	}
 }
