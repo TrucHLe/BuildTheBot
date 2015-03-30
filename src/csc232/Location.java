@@ -18,66 +18,114 @@ public class Location
 {
 	private String name;
 	private String description;
-	private ArrayList<Item> collectionOfItems = new ArrayList<Item>();
+	private ArrayList<Item> contents = new ArrayList<Item>();
 	
 	
-	public Location()
+	/**
+	 * The default constructor.
+	 */
+	public Location( )
 	{
-		
+		name = "Bedroom";
+		description = "A room filled with sunlight";
+		contents = new ArrayList<Item>();
 	}
 	
 	
-	public void setName( String newName )
+	/**
+	 * Constructor with given name and description.
+	 * @param n The name of the location
+	 * @param d The description of the location
+	 */
+	public Location( String n, String d )
 	{
-		name = newName;
+		name = n;
+		description = d;
+		contents = new ArrayList<Item>();
 	}
 	
 	
-	public void setDescription( String newDescription )
+	/**
+	 * Constructor with given name and description.
+	 * @param n The name of the location
+	 * @param d The description of the location
+	 * @param c The contents of the location
+	 */
+	public Location( String n, String d, ArrayList<Item> c )
 	{
-		description = newDescription;
+		name = n;
+		description = d;
+		contents = c;
 	}
 	
 	
+	/**
+	 * Returns the name of the location.
+	 * @return The name of the location.
+	 */
 	public String getName()
 	{
 		return name;
 	}
 	
 	
-	public String getDescription()
+	/**
+	 * Returns the description of the location.
+	 * @return The description of the location.
+	 */
+	public String getDescription( )
 	{
 		return description;
 	}
 	
 	
-	public void addItem( Item newItem )
+	/**
+	 * Adds the given Item to the contents list of the location.
+	 * @param it The item to add to the location.
+	 */
+	public void addItem( Item item )
 	{
-		collectionOfItems.add( newItem );
+		contents.add( item );
 	}
 	
 	
-	public Item retrieveItemFromName( String shortname )
+	/**
+	 * Returns the item with the given name in the location.
+	 * @param name The name of the item to find.
+	 * @return The item with the given name, or null if that item doesn't exist.
+	 */
+	public Item retrieveItem( String name )
 	{
-		for( int i = 0; i < collectionOfItems.size(); i++ )
+		for ( Item item : contents )
 		{
-			if ( collectionOfItems.get(i).getShortname().toLowerCase().equals( shortname.toLowerCase() ) )
-				return collectionOfItems.get(i);
+			if ( item.getName().toLowerCase().equals( name.toLowerCase() ) )
+				return item;
 		}
-		
 		return null;
 	}
 	
 	
-	public Item retrieveItemFromIndex( int index )
+	/**
+	 * Returns the item in position i from the contents list of the location.
+	 * @param i The position of the item
+	 * @return The item from the list, or null if position does not exist.
+	 */
+	public Item retrieveItem( int i )
 	{
-		return collectionOfItems.get(index);
+		if ( ( i >= 0 ) && ( i < contents.size() ) )
+			return contents.get( i );
+		else
+			return null;
 	}
 	
 	
-	public int numberOfItems()
+	/**
+	 * Returns the number of items found in the location.
+	 * @return The number of items found in the location.
+	 */
+	public int countItems( )
 	{
-		return collectionOfItems.size();
+		return contents.size();
 	}
 
 }

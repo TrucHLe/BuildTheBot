@@ -10,56 +10,102 @@ package csc232;
 
 public class Item
 {
-	private String shortname;
+	private String name;
 	private String type;
 	private String description;
 	
-	
+	/**
+	 * The default constructor, creates a default item.
+	 */
 	public Item()
 	{
-		
+		name = "thingy";
+		description = "This is a thingy.";
+		type = "thingy";
 	}
 	
 	
-	public void setShortname( String newShortname )
+	/**
+	 * Constructor with the item completely described.
+	 * 
+	 * @param n The name of the item.
+	 * @param d The description of the item.
+	 * @param t The type of the item.
+	 */
+	public Item( String n, String d, String t )
 	{
-		shortname = newShortname;
+		name = n;
+		description = d;
+		type = t;
 	}
 	
 	
-	public void setType( String newType )
+	/**
+	 * Set the name of the object.
+	 * @param n The new name of the object.
+	 */
+	public void setName( String n )
 	{
-		type = newType;
+		name = n;
 	}
 	
 	
-	public void setDescription( String newDescription )
+	/**
+	 * Set the description of the object.
+	 * @param n The new description of the object.
+	 */
+	public void setDescription( String d )
 	{
-		description = newDescription;
+		description = d;
 	}
 	
 	
-	public String getShortname()
+	/**
+	 * Set the type of the object.
+	 * @param n The new type of the object.
+	 */
+	public void setType( String t )
 	{
-		return shortname;
+		type = t;
 	}
 	
 	
-	public String getDescription()
+	/**
+	 * Returns the name of the object.
+	 * @return The name of the object.
+	 */
+	public String getName( )
+	{
+		return name;
+	}
+	
+	
+	/**
+	 * Returns the description of the object.
+	 * @return The description of the object.
+	 */
+	public String getDescription( )
 	{
 		return description;
 	}
 	
 	
-	public String toString()
+	/**
+	 * Returns the type of the object.
+	 * @return The type of the object.
+	 */
+	public String getType( )
 	{
-		String output = new String();
-		
-		output = output + "Item:" + "\n";
-		output = output + "   " + "shortname: " + shortname + "\n";
-		output = output + "   " + "type: " + type + "\n";
-		output = output + "   " + "description: " + description;
-		
-		return output;
+		return type;
+	}
+	
+	
+	/**
+	 * Returns a String representation of the Item.
+	 * @return A String representation of the Item.
+	 */
+	public String toString( )
+	{
+		return name;	
 	}
 }
