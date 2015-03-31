@@ -28,8 +28,7 @@ public class ContainerItem extends Item {
 	
 	/**
 	 * Constructor with given name and description.
-	 * @param n The name of the location
-	 * @param d The description of the location
+	 * @param n The name of the container
 	 */
 	public ContainerItem( String n )
 	{
@@ -40,9 +39,8 @@ public class ContainerItem extends Item {
 	
 	/**
 	 * Constructor with given name and description.
-	 * @param n The name of the location
-	 * @param d The description of the location
-	 * @param c The contents of the location
+	 * @param n The name of the container
+	 * @param c The contents of the container
 	 */
 	public ContainerItem( String n, ArrayList<Item> c )
 	{
@@ -65,12 +63,12 @@ public class ContainerItem extends Item {
 	 * Removes the given Item from the contents list of the container.
 	 * @param it The item to remove from the container.
 	 */
-	public void removeItem( Item it )
+	public void removeItem( Item item )
 	{
-		for ( Item item : contents )
+		for ( int i = 0; i < contents.size(); i++ )
 		{
-			if ( item.getName( ).toLowerCase( ).equals( it.getName( ).toLowerCase( ) ) )
-				contents.remove( item );
+			if ( contents.get(i).getName().toLowerCase().equals( item.getName().toLowerCase() ) )
+				contents.remove( contents.get(i) );
 		}
 	}
 	
@@ -84,7 +82,7 @@ public class ContainerItem extends Item {
 	{
 		for ( Item item : contents )
 		{
-			if ( item.getName().toLowerCase().equals( name.toLowerCase() ) )
+			if ( item.getName().toLowerCase().equals( name ) )
 				return item;
 		}
 		return null;
@@ -109,19 +107,28 @@ public class ContainerItem extends Item {
 	 * Returns the number of items found in the container.
 	 * @return The number of items found in the container.
 	 */
-	public int countItems( )
+	public int countItems()
 	{
 		return contents.size();
 	}
 	
 	
-	public String getDescription( )
+	public String getDescription()
 	{
-		String output = name + "\n";
+		String output = name + ":\n";
 		
 		for ( Item item : contents )
-			output = output + item.getName( ) + ": " + item.getDescription( ) + "\n";
+			output = output + item.getName() + ": " + item.getDescription() + "\n";
 		
 		return output;
+	}
+	
+	/**
+	 * Returns the name of the container.
+	 * @return The name of the container.
+	 */
+	public String getName( )
+	{
+		return name;
 	}
 }

@@ -23,7 +23,7 @@ public class Location
 	/**
 	 * The default constructor.
 	 */
-	public Location( )
+	public Location()
 	{
 		name = "Bedroom";
 		description = "A room filled with sunlight";
@@ -72,7 +72,7 @@ public class Location
 	 * Returns the description of the location.
 	 * @return The description of the location.
 	 */
-	public String getDescription( )
+	public String getDescription()
 	{
 		return description;
 	}
@@ -80,11 +80,25 @@ public class Location
 	
 	/**
 	 * Adds the given Item to the contents list of the location.
-	 * @param it The item to add to the location.
+	 * @param item The item to add to the location.
 	 */
-	public void addItem( Item it )
+	public void addItem( Item item )
 	{
-		contents.add( it );
+		contents.add( item );
+	}
+	
+	
+	/**
+	 * Removes the given Item from the contents list of the location.
+	 * @param it The item to remove from the location.
+	 */
+	public void removeItem( Item item )
+	{
+		for ( int i = 0; i < contents.size(); i++ )
+		{
+			if ( contents.get(i).getName().toLowerCase().equals( item.getName().toLowerCase() ) )
+				contents.remove( contents.get(i) );
+		}
 	}
 	
 	
@@ -95,10 +109,10 @@ public class Location
 	 */
 	public Item retrieveItem( String name )
 	{
-		for ( Item it : contents )
+		for ( Item item : contents )
 		{
-			if ( it.getName().equals( name ) )
-				return it;
+			if ( item.getName().toLowerCase().equals( name ) )
+				return item;
 		}
 		return null;
 	}
@@ -122,7 +136,7 @@ public class Location
 	 * Returns the number of items found in the location.
 	 * @return The number of items found in the location.
 	 */
-	public int countItems( )
+	public int countItems()
 	{
 		return contents.size();
 	}

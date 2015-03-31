@@ -15,7 +15,7 @@ public class LocationTest {
 	Item item1;
 	Item item2;
 	
-	public LocationTest( )
+	public LocationTest()
 	{
 		location = new Location( "Beach", "This is a beach." );
 		item1 = new Item( "sword", "A sharp sword", "weapon" );

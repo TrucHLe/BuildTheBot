@@ -21,7 +21,7 @@ public class Item
 	{
 		name = "thingy";
 		description = "This is a thingy.";
-		type = "thingy";
+		type = "thing";
 	}
 	
 	
