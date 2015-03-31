@@ -1,8 +1,12 @@
 package csc232;
 
 /**
- * The Item class manages the fields of each Item object.
- * It has methods that can set and return each item's shortname, type, and description.
+ * This class represents an item in our adventure game.
+ * 
+ * The Item class will contain the following data fields:
+ *   String name : represents the "short" name for the item.
+ *   String description : a description of the item.
+ *   String type : represents the "type" of the item.
  * 
  * @author Truc Le
  *

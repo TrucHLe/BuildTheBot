@@ -21,7 +21,7 @@ public class ContainerItem extends Item {
 	 */
 	public ContainerItem()
 	{
-		name = "Bag";
+		name = "container";
 		contents = new ArrayList<Item>();
 	}
 	
@@ -113,6 +113,10 @@ public class ContainerItem extends Item {
 	}
 	
 	
+	/**
+	 * Returns the description of the container.
+	 * @return The description of the container.
+	 */
 	public String getDescription()
 	{
 		String output = name + ":\n";

@@ -1,12 +1,12 @@
 package csc232;
 
 /**
- * The Location class manages the fields of each Location object.
- * It has methods that can:
- * - set and get the name and description of a location,
- * - add items to an ArrayList of items of that location,
- * - retrieve an item's description by passing in the item's name or its index,
- * - retrieve the size of the ArrayList of items
+ * This class represents a particular location in our adventure game.
+ * 
+ * It contains the following data fields:
+ *   name - The name of the location
+ *   description - A description of the location
+ *   contents - A list of Items that are in the location
  * 
  * @author Truc Le
  *
