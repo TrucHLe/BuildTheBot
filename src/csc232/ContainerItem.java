@@ -12,7 +12,6 @@ import java.util.ArrayList;
  */
 public class ContainerItem extends Item {
 
-	private String name;
 	private ArrayList<Item> contents;
 
 	
@@ -21,7 +20,7 @@ public class ContainerItem extends Item {
 	 */
 	public ContainerItem()
 	{
-		name = "container";
+		super( "container" );
 		contents = new ArrayList<Item>();
 	}
 	
@@ -32,7 +31,7 @@ public class ContainerItem extends Item {
 	 */
 	public ContainerItem( String n )
 	{
-		name = n;
+		super( n );
 		contents = new ArrayList<Item>();
 	}
 	
@@ -44,7 +43,7 @@ public class ContainerItem extends Item {
 	 */
 	public ContainerItem( String n, ArrayList<Item> c )
 	{
-		name = n;
+		super( n );
 		contents = c;
 	}
 	
@@ -119,10 +118,10 @@ public class ContainerItem extends Item {
 	 */
 	public String getDescription()
 	{
-		String output = name + ":\n";
+		String output = super.getName() + ":\n";
 		
 		for ( Item item : contents )
-			output = output + item.getName() + ": " + item.getDescription() + "\n";
+			output = output + "  " + item.getName() + ": " + item.getDescription() + "\n";
 		
 		return output;
 	}
@@ -133,6 +132,6 @@ public class ContainerItem extends Item {
 	 */
 	public String getName( )
 	{
-		return name;
+		return super.getName();
 	}
 }

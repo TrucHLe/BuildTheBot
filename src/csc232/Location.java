@@ -13,12 +13,14 @@ package csc232;
  */
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Location
 {
 	private String name;
 	private String description;
 	private ArrayList<Item> contents;
+	private HashMap<String, Location> map = new HashMap<String, Location>();
 	
 	/**
 	 * The default constructor.
@@ -111,7 +113,7 @@ public class Location
 	{
 		for ( Item item : contents )
 		{
-			if ( item.getName().toLowerCase().equals( name ) )
+			if ( item.getName().toLowerCase().equals( name.toLowerCase() ) )
 				return item;
 		}
 		return null;
@@ -139,5 +141,43 @@ public class Location
 	public int countItems()
 	{
 		return contents.size();
+	}
+	
+	
+	/**
+	 * Add a location to the master Location map.
+	 */
+	public void addDirection( String direction, Location location )
+	{
+		map.put( direction, location );
+	}
+	
+	
+	/**
+	 * Prints the direction from the current location.
+	 */
+	public void getDirection()
+	{
+		System.out.println( "From here, you can go:");
+		for ( HashMap.Entry<String, Location> e : map.entrySet() )
+			System.out.println( "  " + e.getKey() );
+	}
+	
+	
+	/**
+	 * Returns the new current location.
+	 * @return The new current location.
+	 */
+	public Location move( String direction )
+	{
+			
+		for ( HashMap.Entry<String, Location> e : map.entrySet() ) {
+			if ( direction.toLowerCase().equals( e.getKey().toLowerCase() ) )
+			{
+				Location location = map.get( e.getKey() );
+				return location;
+			}
+		}
+		return null;
 	}
 }
