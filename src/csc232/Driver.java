@@ -18,20 +18,20 @@ public class Driver
 	public Driver( )
 	{	
 		//All locations
-		Location location0 = new Location( "Location0", "Test description please ignore." );
-		Location location1 = new Location( "Location1", "Test description please ignore." );
-		Location location2 = new Location( "Location2", "Test description please ignore." );
-		Location location3 = new Location( "Location3", "Test description please ignore." );
-		Location location4 = new Location( "Location4", "Test description please ignore." );
-		Location location5 = new Location( "Location5", "Test description please ignore." );
-		Location location6 = new Location( "Location6", "Test description please ignore." );
-		Location location7 = new Location( "Location7", "Test description please ignore." );
-		Location location8 = new Location( "Location8", "Test description please ignore." );
-		Location location9 = new Location( "Location9", "Test description please ignore." );
-		Location location10 = new Location( "Location10", "Test description please ignore." );
+		Location location0 = new Location( "Entrance Point", "This is the point to enter or exit spaceship. There is a door in front of you." );
+		Location location1 = new Location( "Pool Deck", "A great place to work on your 'tan' and go for a swim. There is a corridor in front of you and a door to your right." );
+		Location location2 = new Location( "Trash Compactor", "It may not smell the cleanest but this is the start of sustainability. There is an exit to your left and a heavy metal door in front of you." );
+		Location location3 = new Location( "Sleeping Quarter", "Sshhh, people are trying to catch some zzz. There is a door to your right." );
+		Location location4 = new Location( "Main Hall", "So much activity here all the time! Here is a great place to socialize with friends. There are doors to your left and in front of you, and there are corridors behind you and to your right." );
+		Location location5 = new Location( "Food Court", "Smells great in here! This is the most commonly attended place on the ship. There is a locked door to your right." );
+		Location location6 = new Location( "Armoury", "This can either be the safest or the most dangerous place on the ship. The door to your left locked when you came in." );
+		Location location7 = new Location( "Laboratories", "Laboratories, no description needed. There is a door behind you and in front of you." );
+		Location location8 = new Location( "Storage", "So sad to see all these broken robot parts :( There is a door behind you and a door to your right." );
+		Location location9 = new Location( "Engine Room", "This place keeps the ship running in space. There is a locked door in front of you and a door to your left." );
+		Location location10 = new Location( "Control Center", "Enter at your own risk. There is a door behind you." );
 		
 		
-		//All items
+		//All items escape pods
 		Item item0a = new Item( "Eyes", "A pair of mechanical eyes.", "Robot Part" );
 		Item item0b = new Item( "Arms", "A pair of mechanical arms.", "Robot Part" );
 		Item item0c = new Item( "Box", "A hollow box that serves as the body.", "Robot Part" );
@@ -120,28 +120,28 @@ public class Driver
 		
 		
 		//Add all locations to Map
-		location0.addDirection( "Up", location1 );
-		location1.addDirection( "Up", location4 );
-		location1.addDirection( "Down", location0 );
+		location0.addDirection( "Front", location1 );
+		location1.addDirection( "Front", location4 );
+		location1.addDirection( "Back", location0 );
 		location1.addDirection( "Right", location2 );
-		location2.addDirection( "Up", location5 );
+		location2.addDirection( "Front", location5 );
 		location2.addDirection( "Left", location1);
 		location3.addDirection( "Right", location4 );
-		location4.addDirection( "Up", location7 );
-		location4.addDirection( "Down", location1 );
+		location4.addDirection( "Front", location7 );
+		location4.addDirection( "Back", location1 );
 		location4.addDirection( "Left", location3 );
 		location4.addDirection( "Right", location5 );
-		location5.addDirection( "Down", location2 );
+		location5.addDirection( "Back", location2 );
 		location5.addDirection( "Left", location4 );
 		location5.addDirection( "Right", location6 );
 		location6.addDirection( "Left", location5 );
-		location7.addDirection( "Up", location8 );
-		location7.addDirection( "Down", location4 );
-		location8.addDirection( "Down", location7 );
+		location7.addDirection( "Front", location8 );
+		location7.addDirection( "Back", location4 );
+		location8.addDirection( "Back", location7 );
 		location8.addDirection( "Right", location9 );
-		location9.addDirection( "Up", location10 );
+		location9.addDirection( "Front", location10 );
 		location9.addDirection( "Left", location8 );
-		location10.addDirection( "Down", location9 );
+		location10.addDirection( "Back", location9 );
 		
 		
 		
