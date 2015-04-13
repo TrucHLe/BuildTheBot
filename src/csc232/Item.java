@@ -30,12 +30,25 @@ public class Item
 	
 	
 	/**
-	 * Constructor with given name and description.
+	 * Constructor with given name.
 	 * @param n The name of the item
 	 */
 	public Item( String n )
 	{
 		name = n;
+	}
+	
+	
+	/**
+	 * Constructor with given name and description.
+	 * 
+	 * @param n The name of the item.
+	 * @param d The description of the item.
+	 */
+	public Item( String n, String d)
+	{
+		name = n;
+		description = d;
 	}
 	
 	

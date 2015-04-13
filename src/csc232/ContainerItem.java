@@ -26,7 +26,7 @@ public class ContainerItem extends Item {
 	
 	
 	/**
-	 * Constructor with given name and description.
+	 * Constructor with given name.
 	 * @param n The name of the container
 	 */
 	public ContainerItem( String n )
@@ -37,7 +37,7 @@ public class ContainerItem extends Item {
 	
 	
 	/**
-	 * Constructor with given name and description.
+	 * Constructor with given name and container.
 	 * @param n The name of the container
 	 * @param c The contents of the container
 	 */
@@ -45,6 +45,17 @@ public class ContainerItem extends Item {
 	{
 		super( n );
 		contents = c;
+	}
+	
+	
+	/**
+	 * Constructor with given name and description.
+	 * @param n The name of the container
+	 */
+	public ContainerItem( String n, String d )
+	{
+		super( n, d );
+		contents = new ArrayList<Item>();
 	}
 	
 	
@@ -118,7 +129,7 @@ public class ContainerItem extends Item {
 	 */
 	public String getDescription()
 	{
-		String output = super.getName() + ":\n";
+		String output = super.getName() + ": " + super.getDescription() + "\n" + "You see: \n";
 		
 		for ( Item item : contents )
 			output = output + "  " + item.getName() + ": " + item.getDescription() + "\n";
