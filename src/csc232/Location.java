@@ -21,15 +21,17 @@ public class Location
 	private String description;
 	private ArrayList<Item> contents;
 	private HashMap<String, Location> map = new HashMap<String, Location>();
+	private boolean isAccessible;
 	
 	/**
 	 * The default constructor.
 	 */
 	public Location()
 	{
-		name = "Bedroom";
+		name = "Room";
 		description = "A room filled with sunlight";
 		contents = new ArrayList<Item>();
+		isAccessible = true;
 	}
 	
 	
@@ -38,10 +40,11 @@ public class Location
 	 * @param n The name of the location
 	 * @param d The description of the location
 	 */
-	public Location( String n, String d )
+	public Location( String n, String d, boolean a )
 	{
 		name = n;
 		description = d;
+		isAccessible = a;
 		contents = new ArrayList<Item>();
 	}
 	
@@ -52,11 +55,12 @@ public class Location
 	 * @param d The description of the location
 	 * @param c The contents of the location
 	 */
-	public Location( String n, String d, ArrayList<Item> c )
+	public Location( String n, String d, ArrayList<Item> c, boolean a )
 	{
 		name = n;
 		description = d;
 		contents = c;
+		isAccessible = a;
 	}
 	
 	
@@ -77,6 +81,26 @@ public class Location
 	public String getDescription()
 	{
 		return description;
+	}
+	
+	
+	/**
+	 * Returns the accessibility of the location.
+	 * @return The accessibility of the location.
+	 */
+	public boolean isAccessible()
+	{
+		return isAccessible;
+	}
+	
+	
+	/**
+	 * Set the accessibility of the location.
+	 * @param a The accessibility of the location.
+	 */
+	public void setAccessiblity( boolean a )
+	{
+		isAccessible = a;
 	}
 	
 	

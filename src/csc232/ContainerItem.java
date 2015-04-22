@@ -20,7 +20,7 @@ public class ContainerItem extends Item {
 	 */
 	public ContainerItem()
 	{
-		super( "container" );
+		super( "container", false, true );
 		contents = new ArrayList<Item>();
 	}
 	
@@ -31,30 +31,20 @@ public class ContainerItem extends Item {
 	 */
 	public ContainerItem( String n )
 	{
-		super( n );
+		super( n, false, true );
 		contents = new ArrayList<Item>();
 	}
 	
 	
 	/**
-	 * Constructor with given name and container.
-	 * @param n The name of the container
-	 * @param c The contents of the container
+	 * Constructor with given name, description, and availability.
+	 * @param n The name of the container.
+	 * @param d The description of the container.
+	 * @param a The availability of the container.
 	 */
-	public ContainerItem( String n, ArrayList<Item> c )
+	public ContainerItem( String n, String d, boolean a )
 	{
-		super( n );
-		contents = c;
-	}
-	
-	
-	/**
-	 * Constructor with given name and description.
-	 * @param n The name of the container
-	 */
-	public ContainerItem( String n, String d )
-	{
-		super( n, d );
+		super( n, d, false, a );
 		contents = new ArrayList<Item>();
 	}
 	
@@ -124,18 +114,48 @@ public class ContainerItem extends Item {
 	
 	
 	/**
+	 * Return the contents of the container.
+	 * @return The contents of the container.
+	 */
+	public ArrayList<Item> getContents()
+	{
+		return contents;
+	}
+	
+	
+	/**
 	 * Returns the description of the container.
 	 * @return The description of the container.
 	 */
 	public String getDescription()
 	{
-		String output = super.getName() + ": " + super.getDescription() + "\n" + "You see: \n";
+		String output = super.getName() + ": " + super.getDescription() + "\n";
+		
+		for ( Item item : contents )
+		{
+			if ( item.isAvailable() )
+				output = output + "  " + item.getName() + ": " + item.getDescription() + "\n";
+		}
+		
+		return output;
+	}
+	
+	
+	
+	/**
+	 * Returns the description of the inventory container.
+	 * @return The description of the container container.
+	 */
+	public String getInventory()
+	{
+		String output = super.getName() + ": \n";
 		
 		for ( Item item : contents )
 			output = output + "  " + item.getName() + ": " + item.getDescription() + "\n";
 		
 		return output;
 	}
+	
 	
 	/**
 	 * Returns the name of the container.

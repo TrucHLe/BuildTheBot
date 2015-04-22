@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class ItemTest {
 
-	Item item1 = new Item( "sword", "A sharp pointy sword", "weapon" );
+	Item item1 = new Item( "sword", "A sharp pointy sword", "weapon", true, false );
 	Item item2 = new Item();
 	
 	@Test

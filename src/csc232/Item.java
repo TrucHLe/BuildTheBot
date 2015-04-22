@@ -17,6 +17,8 @@ public class Item
 	private String name;
 	private String description;
 	private String type;
+	private boolean isTakable;
+	private boolean isAvailable;
 
 	/**
 	 * The default constructor, creates a default item.
@@ -26,16 +28,22 @@ public class Item
 		name = "thingy";
 		description = "This is a thingy.";
 		type = "thing";
+		isTakable = true;
+		isAvailable = true;
 	}
 	
 	
 	/**
 	 * Constructor with given name.
 	 * @param n The name of the item
+	 * @param tk The takability of the item.
+	 * @param a The availability of the item.
 	 */
-	public Item( String n )
+	public Item( String n, boolean tk, boolean a )
 	{
 		name = n;
+		isTakable = tk;
+		isAvailable = a;
 	}
 	
 	
@@ -44,11 +52,15 @@ public class Item
 	 * 
 	 * @param n The name of the item.
 	 * @param d The description of the item.
+	 * @param tk The takability of the item.
+	 * @param a The availability of the item.
 	 */
-	public Item( String n, String d)
+	public Item( String n, String d, boolean tk, boolean a )
 	{
 		name = n;
 		description = d;
+		isTakable = tk;
+		isAvailable = a;
 	}
 	
 	
@@ -58,18 +70,22 @@ public class Item
 	 * @param n The name of the item.
 	 * @param d The description of the item.
 	 * @param t The type of the item.
+	 * @param tk The takability of the item.
+	 * @param a The availability of the item.
 	 */
-	public Item( String n, String d, String t )
+	public Item( String n, String d, String t, boolean tk, boolean a )
 	{
 		name = n;
 		description = d;
 		type = t;
+		isTakable = tk;
+		isAvailable = a;
 	}
 	
 	
 	/**
-	 * Set the name of the object.
-	 * @param n The new name of the object.
+	 * Set the name of the item.
+	 * @param n The new name of the item.
 	 */
 	public void setName( String n )
 	{
@@ -78,8 +94,8 @@ public class Item
 	
 	
 	/**
-	 * Set the description of the object.
-	 * @param n The new description of the object.
+	 * Set the description of the item.
+	 * @param n The new description of the item.
 	 */
 	public void setDescription( String d )
 	{
@@ -88,8 +104,8 @@ public class Item
 	
 	
 	/**
-	 * Set the type of the object.
-	 * @param n The new type of the object.
+	 * Set the type of the item.
+	 * @param n The new type of the item.
 	 */
 	public void setType( String t )
 	{
@@ -98,8 +114,39 @@ public class Item
 	
 	
 	/**
-	 * Returns the name of the object.
-	 * @return The name of the object.
+	 * Set the takability of the item.
+	 * @param tk The takability of the item.
+	 */
+	public void setTakability( boolean tk )
+	{
+		isTakable = tk;
+	}
+	
+	/**
+	 * Set the availability of the item.
+	 * @param a The availability of the item.
+	 */
+	public void setAvailability( boolean a )
+	{
+		isAvailable = a;
+	}
+	
+	
+	/**
+	 * Set the takability and the availability of the item.
+	 * @param tk The takability of the item.
+	 * @param a The availability of the item.
+	 */
+	public void setTakabilityAndAvailability( boolean tk, boolean a )
+	{
+		isTakable = tk;
+		isAvailable = a;
+	}
+	
+	
+	/**
+	 * Returns the name of the item.
+	 * @return The name of the item.
 	 */
 	public String getName( )
 	{
@@ -108,8 +155,8 @@ public class Item
 	
 	
 	/**
-	 * Returns the description of the object.
-	 * @return The description of the object.
+	 * Returns the description of the item.
+	 * @return The description of the item.
 	 */
 	public String getDescription( )
 	{
@@ -118,8 +165,8 @@ public class Item
 	
 	
 	/**
-	 * Returns the type of the object.
-	 * @return The type of the object.
+	 * Returns the type of the item.
+	 * @return The type of the item.
 	 */
 	public String getType( )
 	{
@@ -128,8 +175,29 @@ public class Item
 	
 	
 	/**
-	 * Returns a String representation of the Item.
-	 * @return A String representation of the Item.
+	 * Returns whether the item is takable.
+	 * @return The takability of the Item.
+	 */
+	public boolean isTakable()
+	{
+		return isTakable;
+	}
+	
+	
+	/**
+	 * Returns whether the item is available.
+	 * @return The availability of the item.
+	 */
+	public boolean isAvailable()
+	{
+		return isAvailable;
+	}
+	
+	
+	
+	/**
+	 * Returns a string representation of the item.
+	 * @return A string representation of the item.
 	 */
 	public String toString( )
 	{

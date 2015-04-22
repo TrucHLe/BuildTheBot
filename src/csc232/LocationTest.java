@@ -17,9 +17,9 @@ public class LocationTest {
 	
 	public LocationTest()
 	{
-		location = new Location( "Beach", "This is a beach." );
-		item1 = new Item( "sword", "A sharp sword", "weapon" );
-		item2 = new Item( "sandwich", "A PB&J", "food" );
+		location = new Location( "Beach", "This is a beach.", true );
+		item1 = new Item( "sword", "A sharp sword", "weapon", true, false );
+		item2 = new Item( "sandwich", "A PB&J", "food", true, false );
 		location.addItem( item1 );
 		location.addItem( item2 );
 	}
