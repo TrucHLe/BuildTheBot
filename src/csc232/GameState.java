@@ -128,6 +128,7 @@ public class GameState {
 		
 		//Add all locations to Map
 		location0.addDirection( "Front", location1 );
+		location0.addDirection( "Back", location0 );
 		location1.addDirection( "Front", location4 );
 		location1.addDirection( "Back", location0 );
 		location1.addDirection( "Right", location2 );
@@ -572,7 +573,7 @@ public class GameState {
 	 */
 	public void go( String direction )
 	{
-		if ( currentLocation.equals( location0 ) && direction.toLowerCase().equals( "south" ) )
+		if ( currentLocation.equals( location0 ) && direction.toLowerCase().equals( "back" ) )
 		{
 			System.out.println( "LOL you fell off the spaceship!");
 			System.out.println( "GAME OVER" );
