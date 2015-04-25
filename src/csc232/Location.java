@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 public class Location implements Serializable
 {
-	//Generated serial version number for Location class
+	//Serial version number for Location class
 	private static final long serialVersionUID = -8311718771085090950L;
 	
 	private String name;

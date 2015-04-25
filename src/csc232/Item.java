@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class Item implements Serializable
 {
 	
-	//Generated serial version number for Item class
+	//Serial version number for Item class
 	private static final long serialVersionUID = 2142178391537993256L;
 	
 	private String name;

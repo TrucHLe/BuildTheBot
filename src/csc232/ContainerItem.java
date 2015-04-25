@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class ContainerItem extends Item {
 
-	//Generated serial version number for ContainerItem class
+	//Serial version number for ContainerItem class
 	private static final long serialVersionUID = 2316381534490525532L;
 	
 	private ArrayList<Item> contents;

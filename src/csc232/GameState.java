@@ -7,14 +7,18 @@ package csc232;
  */
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class GameState implements Serializable
 {
-	//Generated serial version number for GameState class
+	//Serial version number for GameState class
 	private static final long serialVersionUID = 5080123843892599469L;
 	
 	private Location currentLocation;
 	private ContainerItem inventory;
+	private String savedDate;
 	private int moves;
 	
 	//All locations
@@ -168,6 +172,17 @@ public class GameState implements Serializable
 		currentLocation = location0;
 		inventory = new ContainerItem( "Inventory" );
 		moves = 0;
+	}
+	
+	
+	
+	/**
+	 * Return current location's name.
+	 * @return The current location's name.
+	 */
+	public String currentLocationName()
+	{
+		return currentLocation.getName();
 	}
 	
 	
@@ -365,16 +380,6 @@ public class GameState implements Serializable
 		}
 	}
 	
-	
-	
-	/**
-	 * Return current location's name.
-	 * @return The current location's name.
-	 */
-	public String currentLocationName()
-	{
-		return currentLocation.getName();
-	}
 	
 	
 	
@@ -624,6 +629,30 @@ public class GameState implements Serializable
 		System.out.println( "  \"Go 'direction'\" to move around." );
 		System.out.println();
 		currentLocation.getDirection();
+	}
+	
+	
+	
+	/**
+	 * Print the date of saving game.
+	 */
+	public void saveDate()
+	{
+		DateFormat dateFormat = new SimpleDateFormat( "HH:mm:ss, MMMMMMMMM dd, yyyy" );
+		Calendar cal = Calendar.getInstance();
+		savedDate = dateFormat.format( cal.getTime() );
+		System.out.println( "Saved game at " + savedDate );
+		
+	}
+	
+	
+	
+	/**
+	 * Print the previously saved game's date. 
+	 */
+	public void loadSavedDate()
+	{
+		System.out.println( "Loading your saved game from " + savedDate + "..." );
 	}
 	
 	

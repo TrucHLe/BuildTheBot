@@ -204,6 +204,7 @@ public class Driver
 			{
 				try
 				{
+					gameState.saveDate();
 					ObjectOutputStream fileOut = new ObjectOutputStream(
 							new FileOutputStream( "savedGameState.dat" ));
 					fileOut.writeObject( gameState );
@@ -226,6 +227,7 @@ public class Driver
 					GameState savedGameState = ( GameState ) fileIn.readObject();
 					fileIn.close();
 					gameState = savedGameState;
+					gameState.loadSavedDate();
 				}
 				catch ( Exception e )
 				{
