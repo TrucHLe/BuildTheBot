@@ -8,15 +8,19 @@ package csc232;
  *   description - A description of the location
  *   contents - A list of Items that are in the location
  * 
- * @author Truc Le
+ * @author Truc H. Le
  *
  */
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Location
+public class Location implements Serializable
 {
+	//Generated serial version number for Location class
+	private static final long serialVersionUID = -8311718771085090950L;
+	
 	private String name;
 	private String description;
 	private ArrayList<Item> contents;

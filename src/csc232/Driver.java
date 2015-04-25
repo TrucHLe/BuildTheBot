@@ -3,31 +3,34 @@ package csc232;
 /**
  *  This class runs the main program.
  * 
- * @author Truc Le
+ * @author Truc H. Le
  * 
  */
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class Driver 
 {
 	private GameState gameState = new GameState();
 	
-	public Driver( )
+	public Driver()
 	{	
-
 	}
 
 	
 	public static void main( String[] args )
 	{
-		Driver program = new Driver( );
+		Driver program = new Driver();
 		
 		program.run();
 	}
 
 	
-	public void run( )
+	public void run()
 	{
 		Scanner in = new Scanner( System.in );
 		String command = null;
@@ -197,12 +200,47 @@ public class Driver
 			
 			
 			
+			else if ( wordsCount == 1 && words[0].equals( "save" ) )
+			{
+				try
+				{
+					ObjectOutputStream fileOut = new ObjectOutputStream(
+							new FileOutputStream( "savedGameState.dat" ));
+					fileOut.writeObject( gameState );
+					fileOut.close();
+				}
+				catch ( Exception e )
+				{
+					e.printStackTrace();
+				}
+			}
+			
+			
+			
+			else if ( wordsCount == 1 && words[0].equals( "load" ) )
+			{
+				try
+				{
+					ObjectInputStream fileIn = new ObjectInputStream(
+							new FileInputStream( "savedGameState.dat" ));
+					GameState savedGameState = ( GameState ) fileIn.readObject();
+					fileIn.close();
+					gameState = savedGameState;
+				}
+				catch ( Exception e )
+				{
+					e.printStackTrace();
+				}
+			}
+			
+			
+			
 			else
 			{
 				System.out.println( "Unknown command." );
 			}
 			
-			System.out.println( );
+			System.out.println();
 			gameState.addMove();
 		}
 		

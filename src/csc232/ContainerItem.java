@@ -7,11 +7,14 @@ import java.util.ArrayList;
  * It contains a collection of Items, and provide methods to 
  * add, remove, and query the collection as needed.
  *  
- * @author Truc Le
+ * @author Truc H. Le
  *
  */
 public class ContainerItem extends Item {
 
+	//Generated serial version number for ContainerItem class
+	private static final long serialVersionUID = 2316381534490525532L;
+	
 	private ArrayList<Item> contents;
 
 	

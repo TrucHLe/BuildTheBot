@@ -1,6 +1,17 @@
 package csc232;
 
-public class GameState {
+/**
+ * This class manages the game's state.
+ * 
+ * @author Truc H. Le
+ */
+
+import java.io.Serializable;
+
+public class GameState implements Serializable
+{
+	//Generated serial version number for GameState class
+	private static final long serialVersionUID = 5080123843892599469L;
 	
 	private Location currentLocation;
 	private ContainerItem inventory;
@@ -75,7 +86,9 @@ public class GameState {
 	private Item location10Item1 = new Item( "Mechanical Tube", "A tube that can be made into a robot's neck.", "Robot Part", false, false );
 				
 			
-			
+	/**
+	 * The default constructor that creates the game's original state.		
+	 */
 	public GameState()
 	{
 		//Add some items to containers

@@ -1,5 +1,7 @@
 package csc232;
 
+import java.io.Serializable;
+
 /**
  * This class represents an item in our adventure game.
  * 
@@ -8,12 +10,16 @@ package csc232;
  *   String description : a description of the item.
  *   String type : represents the "type" of the item.
  * 
- * @author Truc Le
+ * @author Truc H. Le
  *
  */
 
-public class Item
+public class Item implements Serializable
 {
+	
+	//Generated serial version number for Item class
+	private static final long serialVersionUID = 2142178391537993256L;
+	
 	private String name;
 	private String description;
 	private String type;
