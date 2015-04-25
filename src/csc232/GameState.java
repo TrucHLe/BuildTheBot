@@ -33,7 +33,7 @@ public class GameState implements Serializable
 	private Location location8 = new Location( "Storage", "So sad to see all these broken robot parts :( There is a door behind you and a door to your right.", true );
 	private Location location9 = new Location( "Engine Room", "This place keeps the ship running in space. There is a door in front of you and a door to your left.", true );
 	private Location location10 = new Location( "Control Center", "Enter at your own risk. There is a door behind you.", false );
-			
+		
 			
 	//All containers
 	private ContainerItem container1 = new ContainerItem( "Drowning Person", "A drowning person.", true );
