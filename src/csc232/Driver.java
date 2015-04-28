@@ -37,6 +37,8 @@ public class Driver
 		String words[] = null;
 		int wordsCount = 0;
 		
+		System.out.println( "test welcome" );
+		
 		while ( true )
 		{
 			System.out.print( "[" + gameState.currentLocationName() + "] > " );
