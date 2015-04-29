@@ -54,11 +54,11 @@ public class GameState implements Serializable
 			
 			
 	//All items
-	private Item location0Item1 = new Item( "Eyes 2.5", "A pair of mechanical eyes wabbling in a corner.", "Robot Part", true, true );
+	private Item location0Item1 = new Item( "Eyes", "A pair of mechanical eyes wabbling in a corner.", "Robot Part", true, true );
 			
 	private Item location1Item1 = new Item( "Floaties", "A horse-shaped floaties Used to rescue someone drowning.", "Miscellaneous", true, true );
 	private Item location1Item2 = new Item( "Towel", "A very absorbant towel.", "Miscellaneous", true, true );
-	private Item location1Item3 = new Item( "Leg 2.5L", "A left track wheel.", "Robot Part", false, false );
+	private Item location1Item3 = new Item( "Leg", "A left track wheel.", "Robot Part", false, false );
 			
 	private Item location2Item1 = new Item( "Microchip", "A seemingly broken microchip.", "Robot Part", true, true );
 	private Item location2Item2 = new Item( "Chips", "An unopen bag of chips.", "Food", true, true );
@@ -77,7 +77,7 @@ public class GameState implements Serializable
 	private Item location6Item1 = new Item( "Hammer", "A rubber mallet.", "Weapon", false, false );
 	private Item location6Item2 = new Item( "Death Laser", "A lethal laser gun.", "Weapon", false, false );
 
-	private Item location7Item1 = new Item( "Arm 2.5R", "A right mechanical arm.", "Robot Part", false, false );
+	private Item location7Item1 = new Item( "Arm", "A right mechanical arm.", "Robot Part", false, false );
 			
 	private Item location8Item1 = new Item( "Box 2.5", "A metal box version 2.5", "Robot Part", true, true ); //this is THE box
 	private Item location8Item2 = new Item( "Box 1.0", "A cardboard box version 1.0", "Miscellaneous", true, true );
@@ -87,7 +87,7 @@ public class GameState implements Serializable
 	private Item container8Item1 = new Item( "Arm 2.5L", "A left mechanical arm.", "Robot Part", true, true );
 
 	
-	private Item location9Item1 = new Item( "Leg 2.5R", "A right track wheel.", "Robot Part", false, true );
+	private Item location9Item1 = new Item( "Leg", "A right track wheel.", "Robot Part", false, true );
 
 	private Item location10Item1 = new Item( "Mechanical Tube", "A tube that can be made into a robot's neck.", "Robot Part", false, false );
 				
