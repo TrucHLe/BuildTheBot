@@ -48,9 +48,9 @@ public class GameState implements Serializable
 	private ContainerItem container6b = new ContainerItem( "Weapons", "An assortment of your favorite lethal weapons.", false );
 	private ContainerItem container7 = new ContainerItem( "Toilet Explosion", "Water keeps splashing out from this thing!", true );
 	private ContainerItem container8 = new ContainerItem( "Box 7.1", "A plastic box version 7.1", true );
-	private ContainerItem container9 = new ContainerItem( "Guard", "A chubby guard who is leaning against the entrance of the Control Center. He is resting his foot on a robot leg that says Leg 2.5R. The Guard's stomach growls.", true );
+	private ContainerItem container9 = new ContainerItem( "Guard", "A chubby guard who is leaning against the entrance of the Control Center. He is resting his foot on a robot leg that says Right Leg. The Guard's stomach growls.", true );
 	private ContainerItem container10a = new ContainerItem( "AUTO", "The ruthless autopilot that controls this entire spaceship. It tries to attack you!", true );
-	private ContainerItem container10b = new ContainerItem( "Magnetic Workspace", "A shiny surface that is used to assemble robot parts. The instruction on the table said:\nTHE ULTIMATE ROBOT RECIPE\n  Eyes 2.5\n  Mechanical Tube\n  Microchip\n  Box 2.5\n  Leg 2.5L\n  Leg 2.5R\n  Arm 2.5L\n  Arm 2.5R", false );
+	private ContainerItem container10b = new ContainerItem( "Magnetic Workspace", "A shiny surface that is used to assemble robot parts. The instruction on the table said:\nTHE ULTIMATE ROBOT RECIPE\n  Eyes\n  Mechanical Tube\n  Microchip\n  Box 2.5\n  Left Leg\n  Right Leg\n  Left Arm\n  Right Arm", false );
 			
 			
 	//All items
@@ -58,7 +58,7 @@ public class GameState implements Serializable
 			
 	private Item location1Item1 = new Item( "Floaties", "A horse-shaped floaties Used to rescue someone drowning.", "Miscellaneous", true, true );
 	private Item location1Item2 = new Item( "Towel", "A very absorbant towel.", "Miscellaneous", true, true );
-	private Item location1Item3 = new Item( "Leg", "A left track wheel.", "Robot Part", false, false );
+	private Item location1Item3 = new Item( "Left Leg", "A left track wheel.", "Robot Part", false, false );
 			
 	private Item location2Item1 = new Item( "Microchip", "A seemingly broken microchip.", "Robot Part", true, true );
 	private Item location2Item2 = new Item( "Chips", "An unopen bag of chips.", "Food", true, true );
@@ -77,17 +77,17 @@ public class GameState implements Serializable
 	private Item location6Item1 = new Item( "Hammer", "A rubber mallet.", "Weapon", false, false );
 	private Item location6Item2 = new Item( "Death Laser", "A lethal laser gun.", "Weapon", false, false );
 
-	private Item location7Item1 = new Item( "Arm", "A right mechanical arm.", "Robot Part", false, false );
+	private Item location7Item1 = new Item( "Right Arm", "A right mechanical arm.", "Robot Part", false, false );
 			
 	private Item location8Item1 = new Item( "Box 2.5", "A metal box version 2.5", "Robot Part", true, true ); //this is THE box
 	private Item location8Item2 = new Item( "Box 1.0", "A cardboard box version 1.0", "Miscellaneous", true, true );
 	private Item location8Item3 = new Item( "Box 3.0", "A cardboard box version 3.0", "Miscellaneous", true, true );
 	private Item location8Item4 = new Item( "Box 7.5.0", "A plastic box version 7.5.0", "Miscellaneous", true, true );
 	private Item location8Item5 = new Item( "Box 9", "A styrofoam box version 9", "Miscellaneous", true, true );
-	private Item container8Item1 = new Item( "Arm 2.5L", "A left mechanical arm.", "Robot Part", true, true );
+	private Item container8Item1 = new Item( "Left Arm", "A left mechanical arm.", "Robot Part", true, true );
 
 	
-	private Item location9Item1 = new Item( "Leg", "A right track wheel.", "Robot Part", false, true );
+	private Item location9Item1 = new Item( "Right Leg", "A right track wheel.", "Robot Part", false, true );
 
 	private Item location10Item1 = new Item( "Mechanical Tube", "A tube that can be made into a robot's neck.", "Robot Part", false, false );
 				
@@ -203,7 +203,7 @@ public class GameState implements Serializable
 		
 		
 		
-		/* Give Floaties to Drowning Person to reveal Leg 2.5L in Pool Deck.
+		/* Give Floaties to Drowning Person to reveal Left Leg in Pool Deck.
 		 * Floaties and Drowning Person become hidden after Drowning Person receives Floaties.
 		 */
 		if ( itemName.equals( "Floaties" ) && containerName.equals( "Drowning Person" ) )
@@ -310,7 +310,7 @@ public class GameState implements Serializable
 		}
 		
 		
-		/* Put M-O in Toilet Explosion to reveal Arm 2.5R in Lavatory.
+		/* Put M-O in Toilet Explosion to reveal Right Arm in Lavatory.
 		 * M-O and Toilet Explosion become hidden after Toilet Explosion receives M-O.
 		 */
 		else if ( itemName.equals( "M-O" ) && containerName.equals( "Toilet Explosion" ) )
@@ -323,18 +323,18 @@ public class GameState implements Serializable
 		}
 		
 		
-		/* Take Leg 2.5R from Engine Room without feeding Guard, thus make him angry. Game Over.
+		/* Take Right Leg from Engine Room without feeding Guard, thus make him angry. Game Over.
 		 */
-		else if ( itemName.equals( "Leg 2.5R" ) && containerName.equals( "" ) && container9.isAvailable() )
+		else if ( itemName.equals( "Right Leg" ) && containerName.equals( "" ) && container9.isAvailable() )
 		{
-			System.out.println( "You attempted to sneak Leg 2.5R from the Guard but he caught your hand! The Guard got very angry and sent you to Commander Thede's Office." );
+			System.out.println( "You attempted to sneak Right Leg from the Guard but he caught your hand! The Guard got very angry and sent you to Commander Thede's Office." );
 			System.out.println( "GAME OVER" );
 			System.exit( 1 );
 		}
 		
 		
 		/* After giving Chips to Guard,
-		 * give Ice Cream to Guard to retrieve Leg 2.5R and gain access to Control Center.
+		 * give Ice Cream to Guard to retrieve Right Leg and gain access to Control Center.
 		 * Chips, Ice Cream, and Guard become hidden after Guard receives Chips and Ice Cream.
 		 */
 		else if ( itemName.equals( "Ice Cream" ) && containerName.equals( "Guard" ) && container.retrieveItem( "chips" ) != null )
@@ -348,7 +348,7 @@ public class GameState implements Serializable
 		
 		
 		/* After giving Ice Cream to Guard,
-		 * give Chips to Guard to retrieve Leg 2.5R and gain access to Control Center.
+		 * give Chips to Guard to retrieve Right Leg and gain access to Control Center.
 		 * Chips, Ice Cream, and Guard become hidden after Guard receives Chips and Ice Cream.
 		 */
 		else if ( itemName.equals( "Chips" ) && containerName.equals( "Guard" ) && container.retrieveItem( "ice cream" ) != null )
@@ -404,10 +404,10 @@ public class GameState implements Serializable
 		}
 		
 		
-		/* Put Eyes 2.5 in Magnetic Workspace.
-		 * Eyes 2.5 become untakable after being put in Magnetic Workspace.
+		/* Put Eyes in Magnetic Workspace.
+		 * Eyes become untakable after being put in Magnetic Workspace.
 		 */
-		else if ( itemName.equals( "Eyes 2.5" ) && containerName.equals( "Magnetic Workspace" ))
+		else if ( itemName.equals( "Eyes" ) && containerName.equals( "Magnetic Workspace" ))
 		{
 			item.setTakability( false );			
 			assembledParts++;
@@ -448,10 +448,10 @@ public class GameState implements Serializable
 		}
 		
 		
-		/* Put Leg 2.5L in Magnetic Workspace.
-		 * Leg 2.5L become untakable after being put in Magnetic Workspace.
+		/* Put Left Leg in Magnetic Workspace.
+		 * Left Leg become untakable after being put in Magnetic Workspace.
 		 */
-		else if ( itemName.equals( "Leg 2.5L" ) && containerName.equals( "Magnetic Workspace" ))
+		else if ( itemName.equals( "Left Leg" ) && containerName.equals( "Magnetic Workspace" ))
 		{
 			item.setTakability( false );			
 			assembledParts++;
@@ -459,10 +459,10 @@ public class GameState implements Serializable
 		}
 		
 		
-		/* Put Leg 2.5R in Magnetic Workspace.
-		 * Leg 2.5R become untakable after being put in Magnetic Workspace.
+		/* Put Right Leg in Magnetic Workspace.
+		 * Right Leg become untakable after being put in Magnetic Workspace.
 		 */
-		else if ( itemName.equals( "Leg 2.5R" ) && containerName.equals( "Magnetic Workspace" ))
+		else if ( itemName.equals( "Right Leg" ) && containerName.equals( "Magnetic Workspace" ))
 		{
 			item.setTakability( false );			
 			assembledParts++;
@@ -470,10 +470,10 @@ public class GameState implements Serializable
 		}
 		
 		
-		/* Put Arm 2.5L in Magnetic Workspace.
-		 * Arm 2.5L become untakable after being put in Magnetic Workspace.
+		/* Put Left Arm in Magnetic Workspace.
+		 * Left Arm become untakable after being put in Magnetic Workspace.
 		 */
-		else if ( itemName.equals( "Arm 2.5L" ) && containerName.equals( "Magnetic Workspace" ))
+		else if ( itemName.equals( "Left Arm" ) && containerName.equals( "Magnetic Workspace" ))
 		{
 			item.setTakability( false );			
 			assembledParts++;
@@ -481,17 +481,16 @@ public class GameState implements Serializable
 		}
 		
 		
-		/* Put Arm 2.5R in Magnetic Workspace.
-		 * Arm 2.5R become untakable after being put in Magnetic Workspace.
+		/* Put Right Arm in Magnetic Workspace.
+		 * Right Arm become untakable after being put in Magnetic Workspace.
 		 */
-		else if ( itemName.equals( "Arm 2.5R" ) && containerName.equals( "Magnetic Workspace" ))
+		else if ( itemName.equals( "Right Arm" ) && containerName.equals( "Magnetic Workspace" ))
 		{
 			item.setTakability( false );			
 			assembledParts++;
 			System.out.println( "You have assembled " + assembledParts + " over 8 robot parts." );
 		}
 	}
-	
 	
 	
 	
