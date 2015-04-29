@@ -82,8 +82,8 @@ public class GameState implements Serializable
 	private Item location8Item1 = new Item( "Box 2.5", "A metal box version 2.5", "Robot Part", true, true ); //this is THE box
 	private Item location8Item2 = new Item( "Box 1.0", "A cardboard box version 1.0", "Miscellaneous", true, true );
 	private Item location8Item3 = new Item( "Box 3.0", "A cardboard box version 3.0", "Miscellaneous", true, true );
-	private Item location8Item5 = new Item( "Box 7.5.0", "A plastic box version 7.5.0", "Miscellaneous", true, true );
-	private Item location8Item6 = new Item( "Box 9", "A styrofoam box version 9", "Miscellaneous", true, true );
+	private Item location8Item4 = new Item( "Box 7.5.0", "A plastic box version 7.5.0", "Miscellaneous", true, true );
+	private Item location8Item5 = new Item( "Box 9", "A styrofoam box version 9", "Miscellaneous", true, true );
 	private Item container8Item1 = new Item( "Arm 2.5L", "A left mechanical arm.", "Robot Part", true, true );
 
 	
@@ -134,8 +134,8 @@ public class GameState implements Serializable
 		location8.addItem( location8Item2 );
 		location8.addItem( location8Item3 );
 		location8.addItem( container8 );
+		location8.addItem( location8Item4 );
 		location8.addItem( location8Item5 );
-		location8.addItem( location8Item6 );
 		location9.addItem( container9 );
 		location9.addItem( location9Item1 );
 		location10.addItem( container10a );

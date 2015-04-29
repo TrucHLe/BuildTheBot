@@ -117,16 +117,6 @@ public class ContainerItem extends Item {
 	
 	
 	/**
-	 * Return the contents of the container.
-	 * @return The contents of the container.
-	 */
-	public ArrayList<Item> getContents()
-	{
-		return contents;
-	}
-	
-	
-	/**
 	 * Returns the description of the container.
 	 * @return The description of the container.
 	 */
@@ -157,15 +147,5 @@ public class ContainerItem extends Item {
 			output = output + "  " + item.getName() + ": " + item.getDescription() + "\n";
 		
 		return output;
-	}
-	
-	
-	/**
-	 * Returns the name of the container.
-	 * @return The name of the container.
-	 */
-	public String getName( )
-	{
-		return super.getName();
 	}
 }
