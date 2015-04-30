@@ -36,8 +36,10 @@ public class Driver
 		String command = null;
 		String words[] = null;
 		int wordsCount = 0;
-		
-		System.out.println( "test welcome" );
+		System.out.println("");
+		System.out.println( "You're outside of a massive space station. You can't remember much, but the vague memory of an important robot comes to mind.");
+		System.out.println("Your eyes are bleary and your head aches, but you know you have a mission to complete. If you're feeling lost, try entering the word");
+		System.out.println("help.");
 		
 		while ( true )
 		{
