@@ -211,7 +211,7 @@ public class GameState implements Serializable
 			location1Item3.setTakabilityAndAvailability( true, true );
 			item.setTakabilityAndAvailability( false, false );
 			container.setAvailability( false );
-			System.out.println( "The person thanked you for saving her. She walked away, leaving behind a robot leg that was stuck in her foot, preventing her from getting out of the pool earlier." ); 
+			System.out.println( "The person thanked you for saving her. She walked away, leaving behind a robot left leg that was stuck in her foot, preventing her from getting out of the pool earlier." ); 
 		}
 		
 		
@@ -318,7 +318,7 @@ public class GameState implements Serializable
 			location7Item1.setTakabilityAndAvailability( true, true );
 			item.setTakabilityAndAvailability( false, false );
 			container.setAvailability( false );
-			System.out.println( "M-O briskly cleaned up the Toilet Explosion. As the water starts to drain away, a robot arm emerges from the puddles." );
+			System.out.println( "M-O briskly cleaned up the Toilet Explosion. As the water starts to drain away, a right robot arm emerges from the puddles." );
 			
 		}
 		
@@ -343,7 +343,7 @@ public class GameState implements Serializable
 			location10.setAccessiblity( true );
 			item.setTakabilityAndAvailability( false, false );
 			container.setAvailability( false );
-			System.out.println( "The Guard thanked you for the Chips and Ice Cream. He went to take a nap, leaving behind the robot leg and exposing the door to the Control Center." );
+			System.out.println( "The Guard thanked you for the Chips and Ice Cream. He went to take a nap, leaving behind the robot right leg and exposing the door to the Control Center." );
 		}
 		
 		
@@ -357,7 +357,7 @@ public class GameState implements Serializable
 			location10.setAccessiblity( true );
 			item.setTakabilityAndAvailability( false, false );
 			container.setAvailability( false );
-			System.out.println( "The Guard thanked you for the Chips and Ice Cream. He went to take a nap, leaving behind the robot leg and exposing the door to the Control Center." );
+			System.out.println( "The Guard thanked you for the Chips and Ice Cream. He went to take a nap, leaving behind the right robot leg and exposing the door to the Control Center." );
 		}
 		
 		
@@ -491,6 +491,7 @@ public class GameState implements Serializable
 			System.out.println( "You have assembled " + assembledParts + " over 8 robot parts." );
 		}
 	}
+	 
 	
 	
 	
