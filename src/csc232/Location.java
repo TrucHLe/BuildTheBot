@@ -120,7 +120,7 @@ public class Location implements Serializable
 	
 	/**
 	 * Removes the given Item from the contents list of the location.
-	 * @param it The item to remove from the location.
+	 * @param item The item to remove from the location.
 	 */
 	public void removeItem( Item item )
 	{
