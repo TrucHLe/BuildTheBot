@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Driver 
 {
 	private GameState gameState = new GameState();
-	
+
 	public Driver()
 	{	
 	}
@@ -50,8 +50,7 @@ public class Driver
 			System.out.print( "[" + gameState.currentLocationName() + "] > " );
 			command = in.nextLine().trim().toLowerCase();
 			words = command.split( " " );
-			wordsCount = words.length;
-			
+			wordsCount = words.length;			
 			
 			
 			if ( wordsCount == 1 && words[0].equals( "quit" ) )
